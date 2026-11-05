@@ -45,26 +45,6 @@ login(userdata.get("HF_TOKEN"))
 ```
 4. Open the public Gradio link, upload a file or paste a link, choose the lecture language and output language, and click Generate.
 
-## Evaluation
-<FILL IN ONLY WITH WHAT YOU ACTUALLY RAN - do not report numbers you did not measure>
-- Test clips: <N>, language: <lang>
-- ASR WER (`evaluate_asr.py`): <value>
-- Notes factual consistency (manual): <supported facts / total>
-- MCQ quality (manual): <value>
-- Quiz generation failures: <x of N>
-
-## Failure analysis
-<Fill with observed errors and examples>
-- Code-mixed speech: the speaker mixes English technical terms (e.g. VS Code, GitHub) into Kannada; the ASR writes them phonetically in Kannada script, which hurts translation and the notes.
-- <Add other observed failures>
-
-## Known issues / notes
-- Requires `transformers<5`; IndicTransToolkit breaks with newer versions.
-- IndicTrans2 is run with `use_cache=False` and greedy decoding to avoid a cache incompatibility with recent `transformers`; this makes translation slower.
-- YouTube links may be blocked on Colab; uploading the file is more reliable.
-- The first run is slow because models are downloaded.
-- Quiz output is requested as JSON; the code retries up to 3 times and may still fail.
-
 ## Limitations
 - Small test set (<N> clips); a 30-50 case evaluation is future work.
 - Errors propagate through the pipeline (ASR -> translation -> notes -> quiz).
