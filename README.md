@@ -44,10 +44,3 @@ login(userdata.get("HF_TOKEN"))
 !python ui.py
 ```
 4. Open the public Gradio link, upload a file or paste a link, choose the lecture language and output language, and click Generate.
-
-## Limitations
-- Small test set (<N> clips); a 30-50 case evaluation is future work.
-- Errors propagate through the pipeline (ASR -> translation -> notes -> quiz).
-
-## Team
-<Names>
