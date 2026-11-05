@@ -1,0 +1,10 @@
+torch
+torchaudio
+transformers>=4.44,<5
+accelerate
+sentencepiece
+onnxruntime
+gradio
+jiwer
+yt-dlp
+git+https://github.com/VarunGumma/IndicTransToolkit.git
